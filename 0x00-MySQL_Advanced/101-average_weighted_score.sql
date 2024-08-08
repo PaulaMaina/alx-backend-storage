@@ -1,6 +1,6 @@
 -- Computes and sstores the average weighted score for all students
 DELIMITER $$
-CREATE PROCEDURE ComputeAverageWeightedScoreForUser ()
+CREATE PROCEDURE ComputeAverageWeightedScoreForUsers ()
 BEGIN
 	ALTER TABLE users ADD total_weighted_score INT NOT NULL;
 	ALTER TABLE users ADD weight_total INT NOT NULL;
