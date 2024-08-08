@@ -2,7 +2,7 @@
 DELIMITER $$
 CREATE TRIGGER update_email
 BEFORE UPDATE ON users
-FROM EACH ROW
+FOR EACH ROW
 BEGIN
 	IF OLD.email != NEW.email THEN
 	    SET NEW.valid_email = 0;
