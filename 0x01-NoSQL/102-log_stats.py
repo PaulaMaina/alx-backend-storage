@@ -43,6 +43,7 @@ def stats():
     """Main program"""
     client = MongoClient("mongodb://127.0.0.1:27017")
     nginx_stats(client.logs.nginx)
+    top_ips(client.logs.nginx)
 
 
 if __name__ == '__main__':
