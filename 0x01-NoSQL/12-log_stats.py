@@ -17,11 +17,11 @@ def nginx_stats(nginx):
     print('{} status check'.format(stat_check))
 
 
-def main():
+def stats():
     """Main program"""
-    client = MongoClient()
+    client = MongoClient("mongodb://127.0.0.1:27017")
     nginx_stats(client.log.nginx)
 
 
-if __name__ = '__main__':
-    main()
+if __name__ == '__main__':
+    stats()
