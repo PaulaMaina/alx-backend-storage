@@ -9,7 +9,7 @@ import requests
 redis_store = redis.Redis()
 
 
-def data_cache(methos: Callable) -> Callable:
+def data_cache(method: Callable) -> Callable:
     """Caches output of fetched data"""
     @wraps(method)
     def history(url) -> str:
