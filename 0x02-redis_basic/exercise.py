@@ -5,7 +5,7 @@ import redis
 import uuid
 
 
-Class Cache:
+class Cache:
     """Cache Class"""
     def __init__(self) -> None:
         self._redis = redis.Redis()
