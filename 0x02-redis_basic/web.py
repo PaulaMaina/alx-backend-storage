@@ -11,7 +11,7 @@ redis_store = redis.Redis()
 
 def data_cache(methos: Callable) -> Callable:
     """Caches output of fetched data"""
-    @wraps
+    @wraps(method)
     def history(url) -> str:
         """Wrapper function"""
         redis_store.incr(f'count:{url}')
