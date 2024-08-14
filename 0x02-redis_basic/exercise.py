@@ -48,7 +48,7 @@ def replay(fn: Callable) -> None:
         fn_call_count = int(redis_store.get(func))
         print('{} was called {} times:'.format(func, fn_call_count))
     fn_ins = redis_store.lrange(key_in, 0, -1)
-    fn_outs = redis_store.lrange(key_out, 0, 1)
+    fn_outs = redis_store.lrange(key_out, 0, -1)
 
     for fn_in, fn_out in zip(fn_ins, fn_outs):
         print('{}(*{}) -> {}'.format(
