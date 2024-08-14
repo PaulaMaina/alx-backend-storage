@@ -43,7 +43,7 @@ def replay(fn: Callable) -> None:
     func = fn.__qualname__
     key_in = '{}:inputs'.format(func)
     key_out = '{}:outputs'.format(func)
-    fn_cal_count = 0
+    fn_call_count = 0
     if redis_store.exists(func) != 0:
         fn_call_count = int(redis_store.get(func))
         print('{} was called {} times:'.format(func, fn_call_count))
